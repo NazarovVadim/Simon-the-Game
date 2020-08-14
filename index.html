@@ -8,5 +8,23 @@
 </head>
 <body>
     
+<div id="app">
+        <div class="red button btn1"></div>
+        <div class="blue button btn2"></div>
+        <div class="yellow button btn3"></div>
+        <div class="green button btn4"></div>
+</div>
+<div id="info">
+    <h1 class="round">Round: {{count}}</h1>
+    <button id="start" v-on:click="start">Start</button>
+    <form class="mode">
+        <input type="radio" name="type-mode" value="easy" checked> Easy <br>
+        <input type="radio" name="type-mode" value="medium">Medium <br>
+        <input type="radio" name="type-mode" value="hard">Hard <br>
+    </form>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./dist/main.js"></script>
 </body>
 </html>
