@@ -4,27 +4,38 @@ let app = new Vue ({
     el: '#info',
     data: {
         count: 0,
-        way: []
+        way: [],
+        cur: 1,
+        roundStarted:false,
+        roundWay: []
     },
     methods:{
-        start: function(event){
+        start(){
+            this.roundStarted = true;
             this.count++;
-            let cur = 1;
             do{
-                cur+=2;
                 this.way.push(Math.ceil(0.5 + Math.random() * 3));
-                this.way.forEach(item => {
-                    console.log(item);
-                    this.sleep(1000);
+                this.way.forEach((element, i) => {
+                    setTimeout(function(){
+                        document.querySelector(`.btn${element}`).style.opacity = 1;
+                        setTimeout(() => {document.querySelector(`.btn${element}`).style.opacity = .6;}, 500)
+                    }, 1000 * ++i)
+                    
                 });
-            }while(cur < this.count)
-            //event.target.disabled = true;
-            
-
+                
+                this.cur = this.count+1;
+            }while(this.cur < this.count)
+            event.target.disabled = true;
+            this.roundWay = this.way;
         },
-        sleep: function(ms){
-            return new Promise(resolve => setTimeout((resolve, ms)))
+        round(event){
+            console.log(1);
+            const target = event.target;
+            console.log(target);
+            if(this.roundStarted){
+                console.log(target);
+            }
         }
-
+        
     }
 })
