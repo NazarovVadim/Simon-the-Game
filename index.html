@@ -18,9 +18,9 @@
             <h1 class="round">Round: {{count}}</h1>
             <button id="start" v-on:click="start">Start</button>
             <form class="mode">
-                <input type="radio" name="type-mode" value="easy" checked> Easy <br>
-                <input type="radio" name="type-mode" value="medium">Medium <br>
-                <input type="radio" name="type-mode" value="hard">Hard <br>
+                <input type="radio" name="type-mode" v-on:click="changeMode" value="easy" class="easy" checked> Easy <br>
+                <input type="radio" name="type-mode" v-on:click="changeMode" value="medium" class="medium">Medium <br>
+                <input type="radio" name="type-mode" v-on:click="changeMode" value="hard" class="hard">Hard <br>
             </form>
         </div>
     </div>
