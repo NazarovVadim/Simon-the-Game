@@ -7,22 +7,24 @@
     <title>Simon The Game</title>
 </head>
 <body>
-    
-<div id="app">
-        <div class="red button btn1" v-on:click="round"></div>
-        <div class="blue button btn2" v-on:click="round"></div>
-        <div class="yellow button btn3" v-on:click="round"></div>
-        <div class="green button btn4" v-on:click="round"></div>
-</div>
-<div id="info">
-    <h1 class="round">Round: {{count}}</h1>
-    <button id="start" v-on:click="start">Start</button>
-    <form class="mode">
-        <input type="radio" name="type-mode" value="easy" checked> Easy <br>
-        <input type="radio" name="type-mode" value="medium">Medium <br>
-        <input type="radio" name="type-mode" value="hard">Hard <br>
-    </form>
-</div>
+    <div class="app">
+        <div id="main">
+            <div class="red button btn1" v-on:click="round"></div>
+            <div class="blue button btn2" v-on:click="round"></div>
+            <div class="yellow button btn3" v-on:click="round"></div>
+            <div class="green button btn4" v-on:click="round"></div>
+        </div>
+        <div id="info">
+            <h1 class="round">Round: {{count}}</h1>
+            <button id="start" v-on:click="start">Start</button>
+            <form class="mode">
+                <input type="radio" name="type-mode" value="easy" checked> Easy <br>
+                <input type="radio" name="type-mode" value="medium">Medium <br>
+                <input type="radio" name="type-mode" value="hard">Hard <br>
+            </form>
+        </div>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./dist/main.js"></script>
